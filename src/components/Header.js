@@ -1,12 +1,12 @@
-import Nav from './Nav'
+import Nav from "./Nav";
 
 const Header = () => {
   return (
-    <>
-        <div>image</div>
-        <Nav />
-    </>
-  )
-}
+    <div class="header">
+      <div>image</div>
+      <Nav />
+    </div>
+  );
+};
 
-export default Header
+export default Header;
