@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import HomePage from "../components/HomePage";
-import ReservationsPage from "../components/ReservationsPage";
+import BookingPage from "../components/BookingPage";
 import MenuPage from "../components/MenuPage";
 import OrderOnlinePage from "../components/OrderOnlinePage";
 import AboutPage from "../components/AboutPage";
