@@ -1,24 +1,18 @@
 import { useState } from "react";
 
-const BookingForm = () => {
+const BookingForm = ({ availableTimes, dispatch }) => {
   //use useState to create a state for the date, guests number and occasion
   const [date, setDate] = useState("");
   const [guests, setGuests] = useState("");
   const [occasion, setOccasion] = useState("");
-  const [availableTimes, setAvailableTimes] = useState([
-    "17:00",
-    "18:00",
-    "19:00",
-    "20:00",
-    "21:00",
-    "22:00",
-  ]);
+  //moved availableTimes state to Main.js component
   const [time, setTime] = useState("");
   //
   function handleSubmit(e) {
     e.preventDefault();
   }
-
+  console.log("tesrtttttttttttttttttttttt");
+  console.log(availableTimes);
   return (
     <form
       // style="display: grid; max-width: 200px; gap: 20px"
@@ -34,7 +28,12 @@ const BookingForm = () => {
       <label htmlFor="res-time">Choose time</label>
       <select
         id="res-time "
-        onChange={(e) => setTime(e.target.options[e.target.selectedIndex].text)}
+        onChange={(e) =>
+          dispatch({
+            type: "update",
+            time: e.target.options[e.target.selectedIndex].text,
+          })
+        }
       >
         {/* <option>17:00</option>
         <option>18:00</option>
