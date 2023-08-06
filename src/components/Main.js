@@ -13,16 +13,20 @@ const Main = () => {
   //   "22:00",
   // ]);
 
+  // state set fn to pass to useReducer
   const initializeTimesFN = () => {
     return ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
   };
   const initializeTimes = initializeTimesFN();
+
+  // reducer function
   const updateTimes = (availableTimes, action) => {
     // return time;
     switch (action.type) {
       case "update": {
         // filter action.time and return the times
-        return availableTimes.filter((time) => time !== action.time);
+        // return availableTimes.filter((time) => time !== action.time); ## change to this later.
+        return availableTimes; // send same time for testing
       }
       default: {
         throw Error("Unknown action: " + action.type);
