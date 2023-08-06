@@ -1,5 +1,5 @@
 // import usestate
-import { useState, useReducer } from "react";
+import { useEffect, useState, useReducer } from "react";
 // import BookingForm component
 import BookingForm from "../components/BookingForm";
 
@@ -17,7 +17,23 @@ const Main = () => {
   const initializeTimesFN = () => {
     return ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
   };
-  const initializeTimes = initializeTimesFN();
+  const initializeTimes = "";
+  useEffect(() => {
+    initializeTimes = fetchDataFromApi();
+  }, []);
+
+  const fetchDataFromApi = () => {
+    // Use the global function provided by the imported API script
+    // In this example, the API function is named "fetchData"]
+    const dateToFetch = "2023-10-10";
+    fetchData(dateToFetch)
+      .then((response) => {
+        return response.data;
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  };
 
   // reducer function
   const updateTimes = (availableTimes, action) => {

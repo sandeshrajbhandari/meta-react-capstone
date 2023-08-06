@@ -11,8 +11,7 @@ const BookingForm = ({ availableTimes, dispatch }) => {
   function handleSubmit(e) {
     e.preventDefault();
   }
-  // console.log("tesrtttttttttttttttttttttt");
-  // console.log(availableTimes);
+
   return (
     <>
       <h1>BookingForm</h1>
