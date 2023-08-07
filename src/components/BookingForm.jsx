@@ -1,15 +1,19 @@
 import { useState } from "react";
 
-const BookingForm = ({ availableTimes, dispatch }) => {
+const BookingForm = ({ availableTimes, dispatch, updateTimes }) => {
   //use useState to create a state for the date, guests number and occasion
   const [date, setDate] = useState("");
   const [guests, setGuests] = useState("");
   const [occasion, setOccasion] = useState("");
   //moved availableTimes state to Main.js component
-  const [time, setTime] = useState("");
+  // const [time, setTime] = useState("");
   //
+  const [selectedTime, setSelectedTime] = useState("");
   function handleSubmit(e) {
     e.preventDefault();
+    console.log("submit working");
+    updateTimes(selectedTime);
+    // dispatch an action to add a reservation
   }
 
   return (
@@ -17,7 +21,7 @@ const BookingForm = ({ availableTimes, dispatch }) => {
       <h1>BookingForm</h1>
       <form
         // style="display: grid; max-width: 200px; gap: 20px"
-        onSubmit={handleSubmit}
+        onSubmit={(e) => handleSubmit(e)}
       >
         <input
           type="date"
@@ -29,12 +33,10 @@ const BookingForm = ({ availableTimes, dispatch }) => {
         <label htmlFor="res-time">Choose time</label>
         <select
           id="res-time"
-          onChange={(e) =>
-            dispatch({
-              type: "update",
-              time: e.target.options[e.target.selectedIndex].text,
-            })
-          }
+          onChange={(e) => {
+            setSelectedTime(e.target.options[e.target.selectedIndex].text);
+            console.log(e.target.options[e.target.selectedIndex].text);
+          }}
         >
           {/* <option>17:00</option>
         <option>18:00</option>
