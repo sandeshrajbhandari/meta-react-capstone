@@ -2,17 +2,20 @@ import { useState } from "react";
 
 const BookingForm = ({ availableTimes, dispatch, updateTimes }) => {
   //use useState to create a state for the date, guests number and occasion
-  const [date, setDate] = useState("");
+  const today = new Date();
+  const formattedDate = `${today.getFullYear()}-${(today.getMonth() + 1)
+    .toString()
+    .padStart(2, "0")}-${today.getDate().toString().padStart(2, "0")}`;
+
+  const [date, setDate] = useState(formattedDate);
   const [guests, setGuests] = useState("");
   const [occasion, setOccasion] = useState("");
-  //moved availableTimes state to Main.js component
-  // const [time, setTime] = useState("");
-  //
+
   const [selectedTime, setSelectedTime] = useState("");
+
   function handleSubmit(e) {
     e.preventDefault();
     console.log("submit working");
-    updateTimes(selectedTime);
     // dispatch an action to add a reservation
   }
 
@@ -20,13 +23,22 @@ const BookingForm = ({ availableTimes, dispatch, updateTimes }) => {
     <>
       <h1>BookingForm</h1>
       <form
-        // style="display: grid; max-width: 200px; gap: 20px"
+        style={{
+          display: "grid",
+          maxWidth: "200px",
+          gap: "20px",
+        }}
         onSubmit={(e) => handleSubmit(e)}
       >
         <input
           type="date"
           id="res-date"
-          onChange={(e) => setDate(e.target.value)}
+          value={date}
+          onChange={(e) => {
+            console.log(e.target.value, typeof e.target.value);
+            setDate(e.target.value);
+            updateTimes(e.target.value);
+          }}
         />
         <label htmlFor="res-date">Choose date</label>
 

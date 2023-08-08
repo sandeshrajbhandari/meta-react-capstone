@@ -9,38 +9,45 @@ const Main = () => {
 
   // state set fn to pass to useReducer
   const initializeTimes = () => {
-    const dateString = "2023-10-10";
-    const dateObject = new Date(dateString);
+    const dateObject = new Date(); // get current date
     let dataFetched = fetchAPI(dateObject);
     console.log(dataFetched);
     dispatch({
       type: "initialize",
-      time: dataFetched,
+      timeList: dataFetched,
     });
   };
 
-  const updateTimes = (selectedTime) => {
+  const updateTimes = (selectedDate) => {
     // console.log(dataFetched);
     // filter = dataFetched.filter((time) => time !== selectedTime);
-    console.log(selectedTime);
+    // let updatedTimes = availableTimes.filter((time) => time !== selectedTime); //change to this later.
+    function convertDateStringToDate(dateString) {
+      const [year, month, day] = dateString.split("-").map(Number);
+      return new Date(year, month - 1, day);
+    }
+    const dateObject = convertDateStringToDate(selectedDate);
+    // fetchAPI requires a dateObject not a date string like "2022-12-10"
+    // so converting it to dateObject
+    let newAvailableTimesforNewDate = fetchAPI(dateObject);
     dispatch({
       type: "update",
-      time: selectedTime,
+      timeList: newAvailableTimesforNewDate,
     });
   };
+
   // reducer function
   const timeReducer = (availableTimes, action) => {
     // return time;
     switch (action.type) {
       case "initialize": {
         // take payload data and set to initializetimes
-        return action.time;
+        return action.timeList;
       }
 
       case "update": {
         // filter action.time and return the times
-        availableTimes = availableTimes.filter((time) => time !== action.time); //change to this later.
-        return availableTimes;
+        return action.timeList;
         // return availableTimes; // send same time for testing
       }
       default: {
