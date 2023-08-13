@@ -1,19 +1,93 @@
-.App {
-  text-align: center;
+body {
+  /* text-align: center; */
+
+  font-family: "Markazi Text", serif;
+  font-family: "Karla", sans-serif;
+  /* max-width: 1260px; */
+  font-size: 1rem;
+  /* // convert 18px to rem units */
+  /* debug mode below */
+  /* background-color: antiquewhite; */
+}
+a {
+  color: black;
+  text-decoration: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a:hover {
+  text-decoration: underline;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* ###HEADER */
+.container {
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-.App-header {
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  margin: 1rem 0;
+  /* padding: 20px 0; */
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+  padding: 0;
+  margin: 0;
+  /* remove bullet point decoration */
+  list-style: none;
+  /* width set to 70% of parent */
+  /* width: 70%; */
+  /* no link decoration and underlines*/
+  /* background-color: #61dafb; */
+}
+
+.nav a {
+  /* //text bold */
+  font-weight: bold;
+  margin-right: 2rem;
+}
+/* HEADER END */
+.footer {
+  display: flex;
+  justify-content: space-around;
+  /* align-items: center; */
+  padding: 0.5rem 0;
+  margin: 1rem 0;
+  list-style: none;
+}
+.footer img {
+  width: 200px;
+  /* height: 100px; */
+  margin: 0;
+  padding: 0;
+}
+
+.footer-links {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-around; */
+  /* align-items: center; */
+  margin: 1rem 0;
+  list-style: none;
+  line-height: 1.5rem;
+}
+.footer-links ul {
+  list-style: none;
+  margin: 0;
+  margin-top: 0.5rem;
+  padding: 0;
+}
+/* ### FOOTER */
+
+/* ### FOOTER END */
+/* .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -22,7 +96,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
+} */
 
 .App-link {
   color: #61dafb;

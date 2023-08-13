@@ -3,10 +3,12 @@ import { useEffect, useState, useReducer } from "react";
 // import BookingForm component
 import BookingForm from "../components/BookingForm";
 import { fetchAPI, submitAPI } from "../util/API";
+// import { useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 const Main = () => {
   // const [availableTimes, setAvailableTimes] = useState([]);
-
+  const [formSubmitted, setFormSubmitted] = useState(false);
   // state set fn to pass to useReducer
   const initializeTimes = () => {
     const dateObject = new Date(); // get current date
@@ -57,6 +59,7 @@ const Main = () => {
   };
   // use useReducer instead of useState
   const [availableTimes, dispatch] = useReducer(timeReducer, []);
+
   useEffect(() => {
     initializeTimes();
   }, []);
@@ -67,6 +70,13 @@ const Main = () => {
   //     type: 'update'
   //   });
   // }
+  function submitForm(form_data) {
+    console.log(form_data);
+    console.log("submitAPI returns " + submitAPI(form_data));
+    if (submitAPI(form_data))
+      // navigate("/booking-confirm", { state: { form_data } });
+      setFormSubmitted(true);
+  }
   return (
     <div>
       <BookingForm
@@ -74,7 +84,9 @@ const Main = () => {
         // setSelectedTime={setSelectedTime}
         dispatch={dispatch}
         updateTimes={updateTimes}
+        submitForm={submitForm}
       />
+      {formSubmitted && <Navigate to="/booking-confirm" />}
     </div>
   );
 };

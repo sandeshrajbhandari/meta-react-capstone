@@ -8,7 +8,7 @@ import AboutPage from "../components/AboutPage";
 const Nav = () => {
   return (
     <>
-      <ul>
+      <ul className="nav">
         <li>
           <Link to="/">Home</Link>
         </li>
