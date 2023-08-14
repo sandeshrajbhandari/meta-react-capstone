@@ -78,7 +78,7 @@ const Main = () => {
       setFormSubmitted(true);
   }
   return (
-    <div>
+    <>
       <BookingForm
         availableTimes={availableTimes}
         // setSelectedTime={setSelectedTime}
@@ -87,7 +87,7 @@ const Main = () => {
         submitForm={submitForm}
       />
       {formSubmitted && <Navigate to="/booking-confirm" />}
-    </div>
+    </>
   );
 };
 

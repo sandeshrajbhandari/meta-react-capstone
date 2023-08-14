@@ -19,7 +19,7 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/menu" element={<MenuPage />} />
         <Route path="/reservations" element={<BookingPage />} />
-        <Route path="/order-online" element={<OrderOnlinePage />} />
+        <Route path="/order-online" element={<BookingPage />} />
         <Route path="/booking-confirm" element={<ConfirmedBooking />} />
       </Routes>
       <Footer />
