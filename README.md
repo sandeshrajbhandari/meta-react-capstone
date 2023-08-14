@@ -1,4 +1,27 @@
-# Getting Started with Create React App
+# Little Lemon Website Capstone project by Sandesh
+
+Here are some screenshots:
+
+## Homepage
+
+![homepage](little-lemon-homepage-sandesh.png)
+
+## Booking Form
+
+Order Online page
+![order-online-page](booking-form-sandesh.png)
+
+## About Page
+
+![about-page](about-page-sandesh.png)
+
+| Thanks for reviewing by project. Looking to learn more front-end skills in the future. Provide feedback in issues page in github. I'll look into it.
+
+# BOLIER PLATE README BELOW.
+
+---
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
