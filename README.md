@@ -15,7 +15,7 @@ Order Online page
 
 ![about-page](about-page-sandesh.png)
 
-| Thanks for reviewing by project. Looking to learn more front-end skills in the future. Provide feedback in issues page in github. I'll look into it.
+> Thanks for reviewing by project. Looking to learn more front-end skills in the future. Provide feedback in issues page in github. I'll look into it.
 
 # BOLIER PLATE README BELOW.
 
