@@ -29,20 +29,30 @@ const BookingForm = ({ availableTimes, dispatch, updateTimes, submitForm }) => {
       <form onSubmit={(e) => handleSubmit(e)}>
         <div>
           <label htmlFor="res-first-name">First Name</label>
-          <input type="text" id="res-first-name" required />
+          <input
+            type="text"
+            id="res-first-name"
+            required
+            placeholder="First Name"
+          />
         </div>
         <div>
           <label htmlFor="res-second-name">Last Name</label>
-          <input type="text" id="res-second-name" required />
+          <input
+            type="text"
+            id="res-second-name"
+            required
+            placeholder="First Name"
+          />
         </div>
         {/* // for telephone no. and email */}
         <div>
           <label htmlFor="res-email">Email</label>
-          <input type="email" id="res-email" required />
+          <input type="email" id="res-email" required placeholder="E-mail" />
         </div>
         <div>
           <label htmlFor="res-tel">Telephone</label>
-          <input type="tel" id="res-tel" required />
+          <input type="tel" id="res-tel" required placeholder="+977...." />
         </div>
         <div>
           <label htmlFor="res-date">Choose date</label>
@@ -109,6 +119,7 @@ const BookingForm = ({ availableTimes, dispatch, updateTimes, submitForm }) => {
           {/* // create a submit button with preventDefault */}
         </div>
         <input
+          className="submit-btn"
           type="submit"
           value="Make Your reservation"
           aria-label="On Click"
